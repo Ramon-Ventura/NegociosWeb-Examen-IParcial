@@ -1,3 +1,7 @@
 exports.home = (req, res, next) => {
-  res.rend("amortizacion");
+  res.render("amortizacion");
+};
+
+exports.calculoA = (req, res, next) => {
+  console.log(req.body);
 };

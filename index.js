@@ -2,6 +2,8 @@ const express = require("express");
 
 const exphbs = require("express-handlebars");
 
+const bodyparser = require("body-parser");
+
 const app = express();
 
 const routes = require("./routes");
@@ -14,6 +16,8 @@ app.engine(
   })
 );
 app.set("view engine", "hbs");
+
+app.use(bodyparser.urlencoded({ extended: true }));
 
 app.use("/", routes());
 
